@@ -11,6 +11,7 @@ import {
 import appCss from '~/styles/app.css?url'
 import ThemeProvider from '~/components/ThemeProvider'
 import { getThemeFromCookie } from '~/lib/theme/theme.functions'
+import type { ColorMode } from '~/types-enums'
 
 export const Route = createRootRoute({
   loader: async () => {
@@ -29,16 +30,16 @@ function RootComponent() {
 
   return (
     <ThemeProvider defaultMode={theme}>
-      <RootDocument>
+      <RootDocument theme={theme}>
         <Outlet />
       </RootDocument>
     </ThemeProvider>
   )
 }
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument({ theme, children }: { theme: ColorMode, children: React.ReactNode }) {
   return (
-    <html>
+    <html lang="en" className={theme}>
       <head>
         <HeadContent />
       </head>
