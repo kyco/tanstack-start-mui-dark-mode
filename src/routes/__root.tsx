@@ -9,19 +9,30 @@ import {
   createRootRoute,
 } from '@tanstack/react-router'
 import appCss from '~/styles/app.css?url'
+import ThemeProvider from '~/components/ThemeProvider'
+import { getThemeFromCookie } from '~/lib/theme/theme.functions'
 
 export const Route = createRootRoute({
+  loader: async () => {
+    const theme = await getThemeFromCookie()
+    return { theme }
+  },
   head: () => ({
     links: [{ rel: 'stylesheet', href: appCss }],
+    meta: [{ name: 'color-scheme', content: 'light dark' }],
   }),
   component: RootComponent,
 })
 
 function RootComponent() {
+  const { theme } = Route.useLoaderData()
+
   return (
-    <RootDocument>
-      <Outlet />
-    </RootDocument>
+    <ThemeProvider defaultMode={theme}>
+      <RootDocument>
+        <Outlet />
+      </RootDocument>
+    </ThemeProvider>
   )
 }
 
