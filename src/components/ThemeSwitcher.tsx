@@ -1,7 +1,7 @@
 import { Button, ButtonGroup } from '@mui/material'
 
-import { useColorScheme } from '~/lib/theme/useColorScheme'
-import { ColorMode } from '~/types-enums'
+import { useColorScheme } from '../lib/theme/useColorScheme'
+import { ColorMode } from '../types-enums'
 
 const colorModeOptions = [
   {

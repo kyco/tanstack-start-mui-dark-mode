@@ -1,7 +1,7 @@
 import { createServerFn } from '@tanstack/react-start'
 import { getCookie, setCookie } from '@tanstack/react-start/server'
 
-import { ColorMode, zColorMode } from '~/types-enums'
+import { ColorMode, zColorMode } from '../../types-enums'
 
 const COOKIE_THEME_KEY = 'preferred_theme'
 

@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import ThemeSwitcher from '~/components/ThemeSwitcher'
+import ThemeSwitcher from '../components/ThemeSwitcher'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,

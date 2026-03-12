@@ -8,10 +8,10 @@ import {
   Scripts,
   createRootRoute,
 } from '@tanstack/react-router'
-import appCss from '~/styles/app.css?url'
-import ThemeProvider from '~/components/ThemeProvider'
-import { getThemeFromCookie } from '~/lib/theme/theme.functions'
-import type { ColorMode } from '~/types-enums'
+import appCss from '../styles/app.css?url'
+import ThemeProvider from '../components/ThemeProvider'
+import { getThemeFromCookie } from '../lib/theme/theme.functions'
+import type { ColorMode } from '../types-enums'
 
 export const Route = createRootRoute({
   loader: async () => {

@@ -1,6 +1,6 @@
 import { useColorScheme as muiUseColorScheme } from '@mui/material/styles'
 
-import type { ColorMode } from '~/types-enums'
+import type { ColorMode } from '../../types-enums'
 
 import { setThemeCookie } from './theme.functions'
 
