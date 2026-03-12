@@ -1,5 +1,5 @@
 import { CssBaseline } from '@mui/material'
-import { ThemeProvider } from '@mui/material/styles'
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles'
 import type { ReactNode } from 'react'
 
 import { theme } from '../styles/mui-theme'
@@ -10,13 +10,11 @@ type ThemeProviderProps = {
   children: ReactNode
 }
 
-const Component = ({ defaultMode, children }: ThemeProviderProps) => {
+export default function ThemeProvider({ defaultMode, children }: ThemeProviderProps) {
   return (
-    <ThemeProvider theme={theme} defaultMode={defaultMode} storageManager={null} noSsr>
+    <MuiThemeProvider theme={theme} defaultMode={defaultMode} storageManager={null} noSsr>
       <CssBaseline />
       {children}
-    </ThemeProvider>
+    </MuiThemeProvider>
   )
 }
-
-export default Component

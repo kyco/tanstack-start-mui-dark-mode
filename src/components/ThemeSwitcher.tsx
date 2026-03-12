@@ -4,21 +4,12 @@ import { useColorScheme } from '../lib/theme/useColorScheme'
 import { ColorMode } from '../types-enums'
 
 const colorModeOptions = [
-  {
-    value: ColorMode.SYSTEM,
-    label: 'System',
-  },
-  {
-    value: ColorMode.LIGHT,
-    label: 'Light',
-  },
-  {
-    value: ColorMode.DARK,
-    label: 'Dark',
-  },
+  { value: ColorMode.SYSTEM, label: 'System' },
+  { value: ColorMode.LIGHT, label: 'Light' },
+  { value: ColorMode.DARK, label: 'Dark' },
 ]
 
-const Component = () => {
+export default function ThemeSwitcher() {
   const { mode, setMode } = useColorScheme()
 
   return (
@@ -39,5 +30,3 @@ const Component = () => {
     </>
   )
 }
-
-export default Component
