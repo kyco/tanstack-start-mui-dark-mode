@@ -1,14 +1,9 @@
 /// <reference types="vite/client" />
 import * as React from 'react'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import {
-  HeadContent,
-  Link,
-  Outlet,
-  Scripts,
-  createRootRoute,
-} from '@tanstack/react-router'
+import { HeadContent, Link, Outlet, Scripts, createRootRoute } from '@tanstack/react-router'
 import appCss from '../styles/app.css?url'
+
 import ThemeProvider from '../components/ThemeProvider'
 import { getThemeFromCookie } from '../lib/theme/theme.functions'
 import type { ColorMode } from '../types-enums'
@@ -37,7 +32,13 @@ function RootComponent() {
   )
 }
 
-function RootDocument({ theme, children }: { theme: ColorMode, children: React.ReactNode }) {
+function RootDocument({
+  theme,
+  children
+}: {
+  theme: ColorMode,
+  children: React.ReactNode
+}) {
   return (
     <html lang="en" className={theme}>
       <head>

@@ -5,15 +5,7 @@ export const theme = createTheme({
     colorSchemeSelector: 'class',
   },
   colorSchemes: {
-    light: {
-      palette: {
-        mode: 'light',
-      },
-    },
-    dark: {
-      palette: {
-        mode: 'dark',
-      },
-    },
+    light: { palette: { mode: 'light' } },
+    dark: { palette: { mode: 'dark' } },
   },
 })
