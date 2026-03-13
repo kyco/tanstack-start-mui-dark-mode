@@ -14,5 +14,7 @@ export const getThemeFromCookie = createServerFn()
 export const setThemeCookie = createServerFn({ method: 'POST' })
   .inputValidator(zColorMode)
   .handler(async ({ data }) => {
-    setCookie(COOKIE_THEME_KEY, data)
+    setCookie(COOKIE_THEME_KEY, data, {
+      maxAge: 60 * 60 * 24 * 365, // 1 year
+    })
   })
