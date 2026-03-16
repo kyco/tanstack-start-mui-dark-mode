@@ -6,7 +6,8 @@ import appCss from '../styles/app.css?url'
 
 import ThemeProvider from '../components/ThemeProvider'
 import { getThemeFromCookie } from '../lib/theme/theme.functions'
-import type { ColorMode } from '../types-enums'
+import darkModeScript from '../lib/theme/darkModeScript?raw'
+import { ColorMode } from '../types-enums'
 
 export const Route = createRootRoute({
   loader: async () => {
@@ -40,9 +41,12 @@ function RootDocument({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={theme}>
+    <html lang="en" className={theme} suppressHydrationWarning>
       <head>
         <HeadContent />
+        {theme === ColorMode.SYSTEM ? (
+          <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
+        ) : null}
       </head>
       <body>
         <div>
