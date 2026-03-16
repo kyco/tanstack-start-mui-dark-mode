@@ -2,6 +2,8 @@
 
 This repo serves as an example for a Tanstack Start project with MUI and server side dark mode.
 
+Related blog article: [Dark Mode in TanStack with MUI](https://kyco.io/blog/dark-mode-in-tanstack-with-mui)
+
 ## Installation
 
 Clone the repo and then in the project root run:
