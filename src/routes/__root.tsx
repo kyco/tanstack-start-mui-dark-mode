@@ -33,13 +33,12 @@ function RootComponent() {
   )
 }
 
-function RootDocument({
-  theme,
-  children
-}: {
+type RootDocumentProps = {
   theme: ColorMode,
   children: React.ReactNode
-}) {
+}
+
+function RootDocument({ theme, children }: RootDocumentProps) {
   return (
     <html lang="en" className={theme} suppressHydrationWarning>
       <head>
